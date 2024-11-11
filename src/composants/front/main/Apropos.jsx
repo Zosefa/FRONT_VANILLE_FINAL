@@ -18,7 +18,7 @@ const Apropos = () => {
 					<div class="col-lg-5 ps-lg-5">
 						<h2 class="section-title">VANILLE 7 MADA</h2>
 						<p>Nous sommes une Entreprise producteur de vanille basé a MADAGASCAR</p>
-						<p><a herf="#" class="btn" style={{"backgroundColor": "#2C0E03"}}>Voir nos produits</a></p>
+						<p><a href="#" class="btn" style={{"backgroundColor": "#2C0E03"}}>Voir nos produits</a></p>
 					</div>
 				</div>
 			</div>

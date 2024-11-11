@@ -23,13 +23,13 @@ const Produit = () => {
 					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
 						<h4 class="mb-4 section-title">Voici des échantillons de nos produits</h4>
 						<p class="mb-4">Tous des Vanilles préparé avec grand soin a MADAGASCAR </p>
-						<p><a href="assets/front/shop.html" class="btn" style={{"backgroundColor": "#2C0E03"}}>Commander</a></p>
+						<p><a href="#" class="btn" style={{"backgroundColor": "#2C0E03"}}>Commander</a></p>
 					</div> 
 					
 					{Array.isArray(disponible) && disponible.length > 0 ? (
 						disponible.map((disponible) => (
 							<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0"> 
-								<a class="product-item" href="assets/front/cart.html">
+								<a class="product-item" href="#">
 									<img src={`${process.env.REACT_APP_BACKEND_URL}${disponible.idvanille.image}`} class="img-fluid product-thumbnail" style={{'minHeight':'25vh','maxHeight':'25vh'}} alt=''/>
 									<h2 class="product-title">{disponible.idvanille.nom}</h2>
 									<div className='w-100 d-flex flex-end+ flex-column'>
