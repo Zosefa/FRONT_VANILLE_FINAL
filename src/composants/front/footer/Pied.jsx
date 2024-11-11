@@ -35,8 +35,8 @@ const Pied = () => {
                     <div className="col-lg-6">
                         <p className="text-center text-lg-start">
                             Copyright &copy; <script>document.write(new Date().getFullYear());</script>. 
-                            <a href="mailto:razafindrakotomickael77@gmail.com">razafindrakotomickael77@gmail.com</a> /
-                            <a href="mailto:zosephatoky@gmail.com">zosephatoky@gmail.com</a>
+                            <a href="https://mail.google.com/mail/u/0/#search/razafindrakotomickael77@gmail.com" target="_blank">razafindrakotomickael77@gmail.com</a> /
+                            <a href="https://mail.google.com/mail/u/0/#search/zosephatoky@gmail.com" target="_blank">zosephatoky@gmail.com</a>
                         </p>
                     </div>
                 </div>
