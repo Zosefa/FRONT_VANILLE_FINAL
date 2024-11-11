@@ -1,0 +1,30 @@
+/* Offcanvas Customization */
+.custom-offcanvas {
+    width: 50%; /* Default: 80% of the screen width (for mobile) */
+    background: linear-gradient(to right, #2C0E03, #EADCB5);
+  }
+  
+  .custom-offcanvas .offcanvas-body .nav-link {
+    color: #EADCB5; /* Change the text color of the menu links */
+    position: relative; /* Necessary for ::before positioning */
+    padding-bottom: 5px; /* Space for the underline */
+    transition: color 0.3s ease; /* Smooth text color transition */
+  }
+  
+  .custom-offcanvas .offcanvas-body .nav-link:hover {
+    color: #fff; /* Change text color on hover */
+  }
+  
+  /* Media Query for larger screens */
+  @media (max-width: 767px) {
+    .custom-offcanvas {
+      width: 50%; /* 50% of the screen width for screens >= 768px (tablets and above) */
+    }
+  }
+
+  @media (max-width: 375px) {
+    .custom-offcanvas {
+      width: 80%; /* 50% of the screen width for screens >= 768px (tablets and above) */
+    }
+  }
+  

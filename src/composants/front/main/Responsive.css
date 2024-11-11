@@ -1,0 +1,25 @@
+.video-responsive {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+  
+@media (max-width: 992px) {
+    .imgs-grid{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 50% !important;
+        margin: auto !important;
+    }
+    .img1{
+        margin-bottom: 2rem !important;
+        width: 100% !important;
+    }
+    .img2{
+        display: none !important;
+    }
+    .img3{
+        display: none !important;
+    }
+  }
