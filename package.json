@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "serve -s build",
-    "build": "react-app-rewired build",
+    "build": "cross-env CI=false react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
@@ -46,6 +46,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.25.9",
+    "cross-env": "^7.0.3",
     "react-app-rewired": "^2.2.1",
     "webpack": "^5.95.0",
     "webpack-dev-server": "^5.1.0"

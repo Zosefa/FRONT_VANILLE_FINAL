@@ -6,7 +6,6 @@ const Login = () => {
     const navigate = useNavigate('');
     const [tel,setTel] = useState('');
     const [psw,setPsw] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
 
     const connexion = async (e) => {
       if(e) e.preventDefault();
@@ -23,12 +22,9 @@ const Login = () => {
         if (response.data.data) {
           sessionStorage.setItem('token', response.data.data);
           navigate('/Admin');
-        } else {
-          setErrorMessage(response.data.Erreur || 'Erreur de connexion');
-        }
+        } 
       } catch (error) {
         console.error(error);
-        setErrorMessage('Erreur de connexion, veuillez réessayer.');
       }
     };
 
