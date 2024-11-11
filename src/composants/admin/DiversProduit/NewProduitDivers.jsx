@@ -14,7 +14,7 @@ const token = sessionStorage.getItem('token');
 
 const AllType = async () => {
     try {
-        const response = await axios.get('http://localhost:8080/Type_divers/selectAll_Type_divers', {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Type_divers/selectAll_Type_divers`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -44,7 +44,7 @@ const insertion = async (e) => {
     });
     console.log(formData.idType)
     try {
-        const response = await axios.post('http://localhost:8080/Divers/insertion_Divers', data, {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Divers/insertion_Divers`, data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': `Bearer ${token}`

@@ -9,14 +9,14 @@ const NewResponsable = () => {
 
   const selectLastPersonneAndInsertionUtilisateur = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/Personne/select_Last_Personne',{
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Personne/select_Last_Personne`,{
         headers:{
           'Authorization':`Bearer ${token}`
         }
       });
       const personne = response.data.data;
 
-      await axios.post('http://localhost:8080/Utilisateur/insertion_Utilisateur',{
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Utilisateur/insertion_Utilisateur`,{
         id_personne : personne[0].id_personne
       },{
         headers:{
@@ -32,7 +32,7 @@ const NewResponsable = () => {
   const insertionPersonne = async (e) => {
     if(e) e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/Personne/insertion_Personne',{nom:nom,tel:tel},{
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Personne/insertion_Personne`,{nom:nom,tel:tel},{
         headers:{
           'Content-Type':'application/json',
           'Authorization':`Bearer ${token}`

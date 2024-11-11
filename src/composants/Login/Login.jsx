@@ -6,27 +6,32 @@ const Login = () => {
     const navigate = useNavigate('');
     const [tel,setTel] = useState('');
     const [psw,setPsw] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const connexion = async (e) => {
-      if(e){
-        e.preventDefault();
-      }
+      if(e) e.preventDefault();
       try {
-        const response = await axios.post('http://localhost:8080/Utilisateur/checking',{tel:tel,pswd:psw},{
-          headers:{
-            'Content-Type' : 'application/json'
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Utilisateur/checking`, {
+          tel: tel,
+          pswd: psw
+        }, {
+          headers: {
+            'Content-Type': 'application/json'
           }
-        })
-        if(response.data.data){
-          sessionStorage.setItem('token',response.data.data);
+        });
+        
+        if (response.data.data) {
+          sessionStorage.setItem('token', response.data.data);
           navigate('/Admin');
-        }else{
-          console.log(response.data.Erreur);
+        } else {
+          setErrorMessage(response.data.Erreur || 'Erreur de connexion');
         }
       } catch (error) {
         console.error(error);
+        setErrorMessage('Erreur de connexion, veuillez réessayer.');
       }
-    }
+    };
+
 
     
     useEffect(() => {
@@ -120,6 +125,7 @@ const Login = () => {
         // script9.src = '/login/js/main.js';
         // script9.async = true;
         // document.body.appendChild(script9);
+        console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
     
         return () => {
           document.head.removeChild(link1);

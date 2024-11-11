@@ -17,7 +17,7 @@ const Solde = () => {
 
     const selectProduitDispo = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Disponible/selectAll_Disponible', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Disponible/selectAll_Disponible`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -31,7 +31,7 @@ const Solde = () => {
     const insertionPromotion = async (e) => {
         if (e) e.preventDefault();
         try {
-            await axios.post('http://localhost:8080/Solde/insertion_Solde', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Solde/insertion_Solde`, {
                 id_disponible: idDispo,
                 remise: remise,
                 debut: dateDebut,
@@ -57,7 +57,7 @@ const Solde = () => {
 
     const AllPromotion = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Solde/selectAll_Solde', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Solde/selectAll_Solde`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

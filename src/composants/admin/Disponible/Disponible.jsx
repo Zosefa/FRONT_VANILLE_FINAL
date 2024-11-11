@@ -17,7 +17,7 @@ const Disponible = () => {
 
   const SelectProduit = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/Vanille/select_Vanille', {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Vanille/select_Vanille`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -30,7 +30,7 @@ const Disponible = () => {
 
   const SelectDisponible = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/Disponible/selectAll_Disponible', {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Disponible/selectAll_Disponible`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -48,7 +48,7 @@ const Disponible = () => {
   const insertion = async (e) => {
     if (e) e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/Disponible/insertion_Disponible', { idvanille: idProduit, debut: datedebut, fin: datefin, affichage: isToggled }, {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Disponible/insertion_Disponible`, { idvanille: idProduit, debut: datedebut, fin: datefin, affichage: isToggled }, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -69,7 +69,7 @@ const Disponible = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:8080/Disponible/modifier_Disponible/${selectedDisponible.id_disponible}`, {
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/Disponible/modifier_Disponible/${selectedDisponible.id_disponible}`, {
         debut: selectedDisponible.debut,
         fin: selectedDisponible.fin,
         affichage: selectedDisponible.affichage

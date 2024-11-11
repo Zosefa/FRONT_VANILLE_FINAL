@@ -10,7 +10,7 @@ const NewProduitDivers = () => {
             e.preventDefault();
         }
         try {
-            await axios.post('http://localhost:8080/Type_divers/insertion_Type_divers',{nom:nom},{
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Type_divers/insertion_Type_divers`,{nom:nom},{
                 headers:{
                     'Content-Type' : 'application/json',
                     'Authorization' : `Bearer ${token}`

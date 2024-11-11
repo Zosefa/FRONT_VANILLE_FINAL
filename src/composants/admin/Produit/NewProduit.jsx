@@ -14,7 +14,7 @@ const NewProduit = () => {
 
     const AllType = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Type/selectAll_Type', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Type/selectAll_Type`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -44,7 +44,7 @@ const NewProduit = () => {
         });
 
         try {
-            const response = await axios.post('http://localhost:8080/Vanille/insertion_Vanille', data, {
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Vanille/insertion_Vanille`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${token}`

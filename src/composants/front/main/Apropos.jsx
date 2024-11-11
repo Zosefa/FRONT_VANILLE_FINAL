@@ -41,17 +41,17 @@ const Apropos = () => {
 				<div class="row">
 					<div class="col-lg-4 col-md-6 mt-3">
                         <video className='video-responsive' controls>
-							<source src="http://localhost:8080/Uploads/VID-20241021-WA0001.mp4" type="video/mp4"/>
+							<source src={`${process.env.REACT_APP_BACKEND_URL}/Uploads/VID-20241021-WA0001.mp4`} type="video/mp4"/>
                         </video>
 					</div>
 					<div class="col-lg-4 col-md-6 mt-3">
                         <video className='video-responsive' controls>
-							<source src="http://localhost:8080/Uploads/VID-20241021-WA0002.mp4" type="video/mp4"/>
+							<source src={`${process.env.REACT_APP_BACKEND_URL}/Uploads/VID-20241021-WA0002.mp4`} type="video/mp4"/>
                         </video>
 					</div>
 					<div class="col-lg-4 col-md-6 mt-3">
                         <video className='video-responsive' controls>
-							<source src="http://localhost:8080/Uploads/VID-20241023-WA0001.mp4" type="video/mp4"/>
+							<source src={`${process.env.REACT_APP_BACKEND_URL}/Uploads/VID-20241023-WA0001.mp4`} type="video/mp4"/>
                         </video>
 					</div>
 				</div>

@@ -8,7 +8,7 @@ const Statistic = () => {
 
     const TotalVanille = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Vanille/total',{
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Vanille/total`,{
                 headers:{
                     'Authorization':`Bearer ${token}`
                 }
@@ -21,7 +21,7 @@ const Statistic = () => {
 
     const TotalDivers = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Divers/total',{
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Divers/total`,{
                 headers:{
                     'Authorization':`Bearer ${token}`
                 }

@@ -11,7 +11,7 @@ const AllProduitPrincipale = () => {
 
     const AllType = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Type/selectAll_Type', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Type/selectAll_Type`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

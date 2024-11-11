@@ -10,7 +10,7 @@ const NewProduitPrincipale = () => {
             e.preventDefault();
         }
         try {
-            await axios.post('http://localhost:8080/Type/insertion_Type',{nom:nom},{
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Type/insertion_Type`,{nom:nom},{
                 headers:{
                     'Content-Type' : 'application/json',
                     'Authorization' : `Bearer ${token}`

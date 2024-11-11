@@ -17,7 +17,7 @@ const ListeProduit = () => {
 
     const AllProduit = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Vanille/selectAll_Vanille', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Vanille/selectAll_Vanille`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -56,7 +56,7 @@ const ListeProduit = () => {
         });
 
         try {
-            const response = await axios.put(`http://localhost:8080/Vanille/update_Vanille/${selectedProduit.id_vanille}`, data, {
+            const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/Vanille/update_Vanille/${selectedProduit.id_vanille}`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${token}`
@@ -97,7 +97,7 @@ const ListeProduit = () => {
                                     <td>{produit.nom}</td>
                                     <td>{produit.description}</td>
                                     <td>{produit.id_type.nom}</td>
-                                    <td className='text-center'><img src={`http://localhost:8080${produit.image}`} alt='' style={{"width":"100px"}}/></td>
+                                    <td className='text-center'><img src={`${process.env.REACT_APP_BACKEND_URL}${produit.image}`} alt='' style={{"width":"100px"}}/></td>
                                     <td className='text-center'>
                                         <Button variant='primary' onClick={() => handleShowModal(produit)}>Modifier</Button>
                                     </td>

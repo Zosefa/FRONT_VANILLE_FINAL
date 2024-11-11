@@ -9,7 +9,7 @@ const Conseil = () => {
 
 	const ListeDispo = async () => {
 		try {
-			const response = await axios.get('http://localhost:8080/Solde/select_Solde');
+			const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Solde/select_Solde`);
 			setSolde(response.data.data);
 		} catch (error) {
 			console.error(error);
@@ -46,7 +46,7 @@ const Conseil = () => {
                           <div className="author-info">
                             <div style={{ width: '100%', height: '50vh' }}>
                               <img
-                                src="http://localhost:8080/Uploads/1726219800_comment-conserver-gousse-de-vanille-efficacement.jpg"
+                                src={`${process.env.REACT_APP_BACKEND_URL}/Uploads/1726219800_comment-conserver-gousse-de-vanille-efficacement.jpg`}
                                 alt="Conseil 1"
                                 className="img-fluid image"
                                 style={{ width: '100%', height: '100%' }}
@@ -65,7 +65,7 @@ const Conseil = () => {
                           <div className="author-info">
                             <div style={{ width: '100%', height: '50vh' }}>
                               <img
-                                src="http://localhost:8080/Uploads/images (1).jpg"
+                                src={`${process.env.REACT_APP_BACKEND_URL}/Uploads/images (1).jpg`}
                                 alt="Conseil 2"
                                 className="img-fluid"
                                 style={{ width: '100%', height: '100%' }}
@@ -84,7 +84,7 @@ const Conseil = () => {
                           <div className="author-info">
                             <div style={{ width: '100%', height: '50vh' }}>
                               <img
-                                src="http://localhost:8080/Uploads/IMG_3061.jpg"
+                                src={`${process.env.REACT_APP_BACKEND_URL}/Uploads/IMG_3061.jpg`}
                                 alt="Conseil 3"
                                 className="img-fluid"
                                 style={{ width: '100%', height: '100%' }}
@@ -116,7 +116,7 @@ const Conseil = () => {
 										<div class="col-lg-3 col-md-6">
 											<div class="feature">
 												<div class="w-50 m-auto" style={{"height":"15vh"}}>
-													<img src={`http://localhost:8080${ solde.id_disponible.idvanille.image }`} alt="" style={{"width": "100%","height": "100%"}}/>
+													<img src={`${process.env.REACT_APP_BACKEND_URL}${ solde.id_disponible.idvanille.image }`} alt="" style={{"width": "100%","height": "100%"}}/>
 												</div>
 												<h3 class="mt-3 text-center">Remise de { solde.remise } % sur { solde.id_disponible.idvanille.nom }</h3>
                         <div className='w-100 text-center'>

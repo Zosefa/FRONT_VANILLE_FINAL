@@ -6,7 +6,7 @@ const Divers = () => {
 
 	const selectDivers = async () => {
 		try {
-			const response = await axios.get('http://localhost:8080/Divers/selectAll_Divers');
+			const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Divers/selectAll_Divers`);
 			setDivers(response.data.data);
 		} catch (error) {
 			console.error(error);
@@ -34,7 +34,7 @@ const Divers = () => {
 										<div class="col-lg-3 col-md-6">
 											<div class="feature">
 												<div class="w-50 m-auto" style={{"height":"15vh"}}>
-													<img src={`http://localhost:8080${ divers.image }`} alt="" style={{"width": "100%","height": "100%"}}/>
+													<img src={`${process.env.REACT_APP_BACKEND_URL}${ divers.image }`} alt="" style={{"width": "100%","height": "100%"}}/>
 												</div>
 												<h3 class="mt-2 text-center">{ divers.nom }</h3>
 												<p class="text-center">{ divers.description }</p>

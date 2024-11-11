@@ -18,7 +18,7 @@ const ListeProduitDivers = () => {
 
     const AllProduit = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Divers/selectAll_Divers', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Divers/selectAll_Divers`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -31,7 +31,7 @@ const ListeProduitDivers = () => {
 
     const fetchTypes = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Type_divers/selectAll_Type_divers', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Type_divers/selectAll_Type_divers`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -70,7 +70,7 @@ const ListeProduitDivers = () => {
         });
 
         try {
-            await axios.put(`http://localhost:8080/Divers/update_Divers/${selectedProduit.id_divers}`, data, {
+            await axios.put(`${process.env.REACT_APP_BACKEND_URL}/Divers/update_Divers/${selectedProduit.id_divers}`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${token}`
@@ -112,7 +112,7 @@ const ListeProduitDivers = () => {
                                     <td>{produit.nom}</td>
                                     <td>{produit.description}</td>
                                     <td>{produit.id_type_divers.nom}</td>
-                                    <td className='text-center'><img src={`http://localhost:8080${produit.image}`} alt='' style={{ "width": "100px" }} /></td>
+                                    <td className='text-center'><img src={`${process.env.REACT_APP_BACKEND_URL}${produit.image}`} alt='' style={{ "width": "100px" }} /></td>
                                     <td className='text-center'>
                                         <Button variant='primary' onClick={() => handleShowModal(produit)}>Modifier</Button>
                                     </td>

@@ -11,7 +11,7 @@ const AllProduitDivers = () => {
 
     const AllType = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Type_divers/selectAll_Type_divers', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Type_divers/selectAll_Type_divers`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

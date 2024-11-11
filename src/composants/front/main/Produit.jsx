@@ -6,7 +6,7 @@ const Produit = () => {
 
 	const ListeDispo = async () => {
 		try {
-			const response = await axios.get('http://localhost:8080/Disponible/select_Disponible');
+			const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Disponible/select_Disponible`);
 			setDisponible(response.data.data);
 		} catch (error) {
 			console.error(error);
@@ -30,7 +30,7 @@ const Produit = () => {
 						disponible.map((disponible) => (
 							<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0"> 
 								<a class="product-item" href="assets/front/cart.html">
-									<img src={`http://localhost:8080${disponible.idvanille.image}`} class="img-fluid product-thumbnail" style={{'minHeight':'25vh','maxHeight':'25vh'}} alt=''/>
+									<img src={`${process.env.REACT_APP_BACKEND_URL}${disponible.idvanille.image}`} class="img-fluid product-thumbnail" style={{'minHeight':'25vh','maxHeight':'25vh'}} alt=''/>
 									<h2 class="product-title">{disponible.idvanille.nom}</h2>
 									<div className='w-100 d-flex flex-end+ flex-column'>
 										{/* <h6 style={{'fontSize':'13px'}}>Disponible entre :</h6>

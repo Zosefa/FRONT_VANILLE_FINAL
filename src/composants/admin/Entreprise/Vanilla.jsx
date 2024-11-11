@@ -10,7 +10,7 @@ const Vanilla = () => {
 
     const selectEntreprise = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Vanilla/selectAll_Vanilla', {
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Vanilla/selectAll_Vanilla`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -45,7 +45,7 @@ const Vanilla = () => {
         };
 
         try {
-            await axios.post('http://localhost:8080/Vanilla/update_Vanilla', dataToUpdate, {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Vanilla/update_Vanilla`, dataToUpdate, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

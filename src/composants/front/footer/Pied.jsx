@@ -6,7 +6,7 @@ const Pied = () => {
 
     const selectEntreprise = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/Vanilla/selectAll_Vanilla');
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Vanilla/selectAll_Vanilla`);
             setEntreprise(response.data.data);
         } catch (error) {
             console.error(error);

@@ -14,7 +14,7 @@ const Profil = () => {
   const selectUser = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/Utilisateur/select_Utilisateur',
+        `${process.env.REACT_APP_BACKEND_URL}/Utilisateur/select_Utilisateur`,
         { token: token },
         {
           headers: {
@@ -46,7 +46,7 @@ const Profil = () => {
       password = mdp;
     }
     try {
-      await axios.post('http://localhost:8080/Utilisateur/update_Utilisateur', {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Utilisateur/update_Utilisateur`, {
         psw: password,
         nom: nom,
         tel: tel,
